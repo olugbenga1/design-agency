@@ -1,11 +1,9 @@
-
 let nav = document.querySelector(".nav-links");
 
 let navList = document.createElement("ul");
 navList.classList.add("menu");
 
-
-// Creating the nav link (about) 
+// Creating the nav link (about)
 let aboutList = document.createElement("li");
 let aboutLink = document.createElement("a");
 aboutLink.href = "javascript:void(0)";
@@ -22,7 +20,6 @@ let about = document.getElementById("about");
 
 // adding the scroll function to the about link
 addScroll(aboutLinkId, about);
-
 
 // creating the nav link (services)
 let servicesList = document.createElement("li");
@@ -42,7 +39,6 @@ let services = document.getElementById("services");
 // add scroll function to the services link
 addScroll(servicesLinkId, services);
 
-
 // creating the nav link (portfolio)
 let portfolioList = document.createElement("li");
 let portfolioLink = document.createElement("a");
@@ -58,9 +54,8 @@ nav.appendChild(navList);
 let portfolioLinkId = document.getElementById("portfolioId");
 let portfolio = document.getElementById("portfolio");
 
-// add scroll function to services 
+// add scroll function to services
 addScroll(portfolioLinkId, portfolio);
-
 
 // creating the nav link (team)
 let teamList = document.createElement("li");
@@ -80,7 +75,6 @@ let team = document.getElementById("team");
 // add scroll function to team
 addScroll(teamLinkId, team);
 
-
 // creating the nav link (contact)
 let contactList = document.createElement("li");
 let contactLink = document.createElement("a");
@@ -99,15 +93,12 @@ let contact = document.getElementById("contact");
 // add scroll function to contact
 addScroll(contactLinkId, contact, contactLink);
 
-
 // get the boundless logo and hero section id
 let logo = document.getElementById("logo");
 let hero = document.getElementById("hero");
 
 // add scroll function to the hero section
 addScroll(logo, hero);
-
-
 
 // javascript to toggle nav menu
 const menu = document.querySelector(".menu");
@@ -118,32 +109,30 @@ const closeIcon = document.querySelector(".close-icon");
 const current = document.querySelector(".active");
 
 function toggleMenu() {
-    if (menu.classList.contains("show-menu")) {
-        menu.classList.remove("show-menu");
-        closeIcon.style.display = "none";
-        openIcon.style.display = "block";
-    } else {
-        menu.classList.add("show-menu");
-        closeIcon.style.display = "block";
-        openIcon.style.display = "none";
-    }
+  if (menu.classList.contains("show-menu")) {
+    menu.classList.remove("show-menu");
+    closeIcon.style.display = "none";
+    openIcon.style.display = "block";
+  } else {
+    menu.classList.add("show-menu");
+    closeIcon.style.display = "block";
+    openIcon.style.display = "none";
+  }
 }
 
 navToggle.addEventListener("click", toggleMenu);
 
-
+// To close the menu when you click a nav link in mobile mode.
 menuItems.forEach((menuItem) => {
-    menuItem.addEventListener("click", toggleMenu);
-})
-
+  menuItem.addEventListener("click", toggleMenu);
+});
 
 // the scroll function
 function addScroll(linkId, sectionId) {
-    linkId.addEventListener("click", function() {
-       sectionId.scrollIntoView({behavior: "smooth", block: "start"});
-    });
+  linkId.addEventListener("click", function () {
+    sectionId.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
 }
-
 
 // function addScroll(linkId, sectionId, menuItems) {
 //     linkId.addEventListener("click", function() {
